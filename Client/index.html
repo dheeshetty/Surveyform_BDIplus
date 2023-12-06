@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
+
+    <title>Product Feedback Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Product Feedback Survey</h1>
+
+        <img src="./assets/product-reviews.png" alt="review" width="100%" height="auto">
+
+        <form id="surveyForm">
+            <div>
+            <label for="userName" class="user">Name:</label>
+            <input type="text" id="userName" name="userName" required>
+            <div id="nameError" class="validation-error"></div>
+        </div>
+        <fieldset>
+            <legend>Rate the product (1-5):</legend>
+            <div class="radio-item">
+            <label for="rating1">
+                <input type="radio" id="rating1" name="rating" value="1" required>
+                1 - Poor
+            </label></div>
+            <div class="radio-item"><label for="rating2">
+                <input type="radio" id="rating2" name="rating" value="2">
+                2 - Fair
+            </label></div>
+            <div class="radio-item"><label for="rating3">
+                <input type="radio" id="rating3" name="rating" value="3">
+                3 - Average
+            </label></div>
+            <div class="radio-item"><label for="rating4">
+                <input type="radio" id="rating4" name="rating" value="4">
+                4 - Good
+            </label></div>
+            <div class="radio-item"><label for="rating5">
+                <input type="radio" id="rating5" name="rating" value="5">
+                5 - Excellent
+            </label></div>
+            <div id="ratingError" class="validation-error"></div>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Features I liked:</legend>
+            <div class="features-container">
+            <div class="feature-item">
+                <label>
+                    <input class="dhee"type="checkbox" id="fuelEfficiency" name="features[]" value="Fuel Efficiency">
+                    Fuel Efficiency
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="safetyFeatures" name="features[]" value="Advanced Safety Features">
+                    Advanced Safety Features
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="comfortInterior" name="features[]" value="Comfortable Interior">
+                    Comfortable Interior
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="infotainmentSystem" name="features[]" value="Infotainment System">
+                    Infotainment System
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="reliability" name="features[]" value="Reliability">
+                    Reliability
+                </label>
+            </div>
+
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="styleDesign" name="features[]" value="Stylish Design">
+                    Stylish Design
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="performance" name="features[]" value="High Performance">
+                    High Performance
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="hybridTechnology" name="features[]" value="Hybrid Technology">
+                    Hybrid Technology
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="parkingAssist" name="features[]" value="Parking Assist">
+                    Parking Assist
+                </label>
+            </div>
+        
+            <div class="feature-item">
+                <label>
+                    <input type="checkbox" id="smartConnectivity" name="features[]" value="Smart Connectivity">
+                    Smart Connectivity
+                </label>
+            </div>             </div>
+            <div id="featuresError" class="validation-error"></div>
+        </fieldset>
+ 
+
+            <label for="productCategory" class="category">Product Category:</label>
+            <div class="dropdown-container">
+                <select id="productCategory" name="productCategory" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="Bmw">BMW</option>
+                    <option value="Audi">AUDI</option>
+                    <option value="RangeRover">Range Rover</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="RollsRoyce">Rolls Royce</option>
+                    <option value="MiniCooper">Mini Cooper</option>
+                </select>
+                <div id="categoryError" class="validation-error"></div>
+            </div>
+
+            <button type="button" onclick="validateAndSubmit()">Submit</button>
+        </form>
+        <div id="confirmation" class="hidden">
+            <p>Thank you for your feedback!</p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
