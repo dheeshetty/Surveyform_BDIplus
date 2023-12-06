@@ -16,22 +16,22 @@ function validateAndSubmit() {
     categoryErrorContainer.textContent = '';
 
     if (userName.trim() === '') {
-        displayValidationError('Please enter your name.', nameErrorContainer);
+        displayValidationError('Please Enter your Name!', nameErrorContainer);
         return;
     }
 0
     if (!rating) {
-        displayValidationError('Please rate the product.', ratingErrorContainer);
+        displayValidationError('Please Rate the Product.', ratingErrorContainer);
         return;
     }
 
     if (checkboxes.length === 0) {
-        displayValidationError('Please select at least one feature you liked.', featuresErrorContainer);
+        displayValidationError('Please select at least one Feature you Liked.', featuresErrorContainer);
         return;
     }
 
     if (productCategory.value === '') {
-        displayValidationError('Please select a product category.', categoryErrorContainer);
+        displayValidationError('Please select a Product Category.', categoryErrorContainer);
         return;
     }
     var formData = {
@@ -41,7 +41,7 @@ function validateAndSubmit() {
         productCategory: productCategory.value
     };
 
-    fetch('http://localhost:3000/submit', {
+    fetch('https://surveyform-kx6v.onrender.com/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ function validateAndSubmit() {
     document.getElementById('surveyForm').reset();
     setTimeout(function() {
         document.getElementById('confirmation').classList.add('hidden');
-    }, 30 * 60 * 1000);
+    }, 7000);
 }
 
 function displayValidationError(message, container) {
